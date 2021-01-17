@@ -1,7 +1,8 @@
 <?php
 
-//visszaadja a file útvnalát, a file nélkül
-require_once(__DIR__ . "../../../config/config.php");
+namespace core\database;
+
+use PDO;
 
 class PDOConnect
 {
@@ -20,8 +21,8 @@ class PDOConnect
         try {
             $dsn = 'mysql:dbname=' . $dbname . ';host=' . $host;
             $this->pdo = new PDO($dsn, $username, $password);
-        } catch (PDOException $e) {
-            throw new Exception('Adatbázis kapcsolódási hiba' . $e->getMessage());
+        } catch (\PDOException $e) {
+            throw new \Exception('Adatbázis kapcsolódási hiba' . $e->getMessage());
         }
     }
 

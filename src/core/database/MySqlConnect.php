@@ -1,7 +1,8 @@
 <?php
 
-//visszaadja a file útvnalát, a file nélkül
-require_once(__DIR__ . "../../../config/config.php");
+namespace core\database;
+
+use mysqli;
 
 class MySqlConnect
 {
@@ -17,7 +18,6 @@ class MySqlConnect
         $username = constant($db . '_DATABASE_USERNAME');
         $password = constant($db . '_DATABASE_PASSWORD');
         $dbname = constant($db . '_DATABASE_NAME');
-
         $this->mysqli = new mysqli($host, $username, $password, $dbname);
         if ($this->mysqli->connect_errno) {
             die('Adatbázis kapcsolódási hiba' . $this->mysqli->error);
