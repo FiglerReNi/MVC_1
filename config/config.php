@@ -12,3 +12,5 @@ define('TWO_DATABASE_NAME', 'test');
 define('TWO_DATABASE_USERNAME', 'root');
 define('TWO_DATABASE_PASSWORD', '');
 
+
+file_put_contents('c:\USERS\figlerr\Documents\RENI-LOGJA.log',$exception.PHP_EOL,FILE_APPEND);

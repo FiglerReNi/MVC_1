@@ -2,7 +2,9 @@
 
 namespace core\database;
 
+use Exception;
 use PDO;
+use PDOException;
 
 class PDOConnect
 {
@@ -11,7 +13,7 @@ class PDOConnect
     /**
      * PDOConnect constructor.
      */
-    public function __construct($db)
+    private function __construct($db)
     {
         $host = constant($db . '_DATABASE_HOST');
         $username = constant($db . '_DATABASE_USERNAME');
@@ -21,8 +23,8 @@ class PDOConnect
         try {
             $dsn = 'mysql:dbname=' . $dbname . ';host=' . $host;
             $this->pdo = new PDO($dsn, $username, $password);
-        } catch (\PDOException $e) {
-            throw new \Exception('Adatbázis kapcsolódási hiba' . $e->getMessage());
+        } catch (PDOException $e) {
+            throw new Exception('Adatbázis kapcsolódási hiba' . $e->getMessage());
         }
     }
 

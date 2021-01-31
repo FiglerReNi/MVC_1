@@ -13,7 +13,6 @@ class MySqlConnect
      */
     public function __construct($db)
     {
-        //parent::__construct();
         $host = constant($db . '_DATABASE_HOST');
         $username = constant($db . '_DATABASE_USERNAME');
         $password = constant($db . '_DATABASE_PASSWORD');
