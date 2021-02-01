@@ -1,17 +1,31 @@
 <?php
 
-
+namespace core\log;
+/**
+ * Class Log
+ * @package core\log
+ */
 class Log
 {
-    private $path = __DIR__ .DIRECTORY_SEPARATOR . "logs" . DIRECTORY_SEPARATOR;
 
-    /**
-     * Log constructor.
-     */
-    public function __construct()
+    private string $fileName;
+    private string $message;
+
+
+
+    public function __construct($fileName, $message)
     {
-       $date =
+        $this->fileName = $fileName;
+        $this->message = $message;
+        $this->createLog();
     }
 
+    private function createLog(): void
+    {
+        if (!is_dir(LOGPATH)) {
+            mkdir(LOGPATH);
+        }
+        file_put_contents(LOGPATH . $this->fileName, $this->message . PHP_EOL, FILE_APPEND);
+    }
 
 }

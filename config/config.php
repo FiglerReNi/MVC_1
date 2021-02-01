@@ -13,4 +13,4 @@ define('TWO_DATABASE_USERNAME', 'root');
 define('TWO_DATABASE_PASSWORD', '');
 
 
-file_put_contents('c:\USERS\figlerr\Documents\RENI-LOGJA.log',$exception.PHP_EOL,FILE_APPEND);
+define('LOGPATH', 'logs/'.date('Y-m-d'));
