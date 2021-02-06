@@ -2,7 +2,7 @@
 
 use core\log\Log;
 
-include(__DIR__ . "\config\config.php");
+include("config\config.php");
 include "vendor\autoload.php";
 
 $path = "";
