@@ -2,7 +2,8 @@
 
 use core\log\Log;
 
-include("config\config.php");
+//ezt külső fájlbó lehetne
+include "config\config.php";
 include "vendor\autoload.php";
 
 $path = "";

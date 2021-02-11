@@ -1,6 +1,7 @@
 <?php
 
 namespace core\log;
+
 /**
  * Class Log
  * @package core\log
@@ -25,7 +26,7 @@ class Log
         if (!is_dir(LOGPATH)) {
             mkdir(LOGPATH);
         }
-        file_put_contents(LOGPATH . $this->fileName, $this->message . PHP_EOL, FILE_APPEND);
+        file_put_contents(LOGPATH. $this->fileName, $this->message . PHP_EOL, FILE_APPEND);
     }
 
 }
