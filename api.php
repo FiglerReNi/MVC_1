@@ -1,5 +1,6 @@
 <?php
 
+use controller\PageNotFoundController;
 use core\log\Log;
 
 //ezt külső fájlbó lehetne
@@ -14,7 +15,8 @@ else {
     $fileName = '/system.log';
     $message = date("Y-m-d H:i:s") . PHP_EOL . 'A keresett útvonal nem található: ' . $path;
     new Log($fileName, $message);
-    header("Location: controller\PageNotFoundController"); // itt lehet valami szép oldal (twiggel majd pl) +log
+    new PageNotFoundController();
+ // itt lehet valami szép oldal (twiggel majd pl) +log
 }
 
 
