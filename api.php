@@ -15,8 +15,7 @@ else {
     $fileName = '/system.log';
     $message = date("Y-m-d H:i:s") . PHP_EOL . 'A keresett útvonal nem található: ' . $path;
     new Log($fileName, $message);
-    new PageNotFoundController();
- // itt lehet valami szép oldal (twiggel majd pl) +log
+    PageNotFoundController::getPageNotFoundPath();
 }
 
 

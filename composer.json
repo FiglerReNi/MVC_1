@@ -3,8 +3,9 @@
         "psr-4": { "": "src" }
     },
     "require": {
+        "phpmailer/phpmailer": "^6.2",
+        "twig/twig" :"^3.0",
         "ext-mysqli": "*",
-        "ext-pdo": "*",
-        "phpmailer/phpmailer": "^6.2"
+        "ext-pdo": "*"
     }
 }
