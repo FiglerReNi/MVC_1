@@ -13,7 +13,7 @@ class PDOConnect
     /**
      * PDOConnect constructor.
      */
-    private function __construct($db)
+    public function __construct($db)
     {
         $host = constant($db . '_DATABASE_HOST');
         $username = constant($db . '_DATABASE_USERNAME');

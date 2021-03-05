@@ -6,6 +6,7 @@ use core\log\Log;
 //ezt külső fájlbó lehetne
 include "config\config.php";
 include "vendor\autoload.php";
+include "config\constant.php";
 
 $path = "";
 if (php_sapi_name() == 'cli') $path = $argv[1];

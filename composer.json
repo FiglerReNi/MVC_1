@@ -1,4 +1,6 @@
 {
+    "description":"",
+    "name":"vendor/mainproject",
     "autoload": {
         "psr-4": { "": "src" }
     },
@@ -6,6 +8,7 @@
         "phpmailer/phpmailer": "^6.2",
         "twig/twig" :"^3.0",
         "ext-mysqli": "*",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "php-imap/php-imap": "^4.1"
     }
 }
