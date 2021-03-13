@@ -23,7 +23,8 @@ class MailReaderConnect extends Mailbox
         parent::__construct($imapPath, $username, $password, EMAIL_ATTACHMENT);
     }
 
-    private function createFolder(){
+    private function createFolder()
+    {
         if (!is_dir(EMAIL_ATTACHMENT)) {
             mkdir(EMAIL_ATTACHMENT);
         }

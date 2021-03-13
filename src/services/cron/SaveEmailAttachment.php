@@ -4,7 +4,7 @@
 namespace services\cron;
 
 use core\imap\MailReaderConnect;
-use PhpImap\Exceptions\ConnectionException;
+use Exception;
 
 class SaveEmailAttachment
 {
@@ -20,16 +20,16 @@ class SaveEmailAttachment
             if($this->checkResult()){
                 $this->countAttachment();
             }
+            $this->imap->expungeDeletedMails();
 
-        }catch (ConnectionException $e){
-            echo $e->getMessage();
+        }catch (Exception $e){
+            echo 'Imap Hiba: '. $e->getMessage();
         }
     }
 
     private function searchMail(){
         $this->imap = new MailReaderConnect('ONE');
         $this->emails = $this->imap->searchMailbox('FROM ' . \Constant::EMAIL_FROM);
-
 
     }
 
@@ -47,6 +47,7 @@ class SaveEmailAttachment
             $email = $this->imap->getMail($email);
             if($email->hasAttachments()) {
                 $this->attachmentNum++;
+                $this->imap->deleteMAil($email->id);
             }
         }
         echo $this->attachmentNum . ' csatolmány mentve';
