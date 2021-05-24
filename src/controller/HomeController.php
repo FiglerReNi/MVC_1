@@ -12,9 +12,5 @@ class HomeController
     public function __construct()
     {
         echo 'teszt';
-//        $adresses = 'stephany85@gmail.com';
-//        $subject = 'Teszt';
-//        $body = 'Ez egy teszt levél.';
-//        new MailSender($adresses, $subject, $body);
     }
 }
